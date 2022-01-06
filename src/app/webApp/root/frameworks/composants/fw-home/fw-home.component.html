@@ -5,13 +5,16 @@
 
 <ul>
   <li>
-    <a class="nav-link" routerLink="angular-13"> Angular 13 </a>
+<!--    <a class="nav-link" routerLink="angular-13"> Angular 13 </a>-->
+<!--    Ancienne écriture-->
+<!--    <a class="nav-link" [routerLink]="['angular-13']"> Angular 13 </a>-->
+    <a class="nav-link" [routerLink]="['angular-13']" [routerLinkActive]="'lien-actif'"> Angular 13 </a>
   </li>
   <li>
-    <a class="nav-link" routerLink="react"> React </a>
+    <a class="nav-link" routerLink="react" [routerLinkActive]="'lien-actif'"> React 17 </a>
   </li>
   <li>
-    <a class="nav-link" routerLink="vue"> Vue </a>
+    <a class="nav-link" routerLink="vue" [routerLinkActive]="'lien-actif'"> Vue </a>
   </li>
 </ul>
 

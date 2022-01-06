@@ -4,6 +4,7 @@ import {HomeComponent} from "./webApp/root/accueil/home/home.component";
 import {ListeDesFilmsComponent} from "./webApp/root/film/liste-des-films/liste-des-films.component";
 import {FwLandingPageComponent} from "./webApp/root/frameworks/composants/fw-landing-page/fw-landing-page.component";
 import {routesFw} from "./webApp/root/frameworks/frameworks-routing.module";
+const test = import('./webApp/root/frameworks/frameworks.module');
 
 const routes: Routes = [
   { path: '', component: HomeComponent},
@@ -19,7 +20,7 @@ const routes: Routes = [
 
   //3ème méthode: LAZY LOADING avec async/await
   { path: 'liste-des-frameworks', component: FwLandingPageComponent,
-    loadChildren: async () => (await  import('./webApp/root/frameworks/frameworks.module')).FrameworksModule },
+    loadChildren: async () => (await (test) ).FrameworksModule },
 
 
 ];
