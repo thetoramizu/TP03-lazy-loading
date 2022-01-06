@@ -7,6 +7,7 @@ import {AccueilModule} from "./webApp/root/accueil/accueil.module";
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
 import {FrameworksModule} from "./webApp/root/frameworks/frameworks.module";
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -23,6 +24,7 @@ import {FrameworksModule} from "./webApp/root/frameworks/frameworks.module";
       // or after 30 seconds (whichever comes first).
       registrationStrategy: 'registerWhenStable:30000'
     }),
+    BrowserAnimationsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

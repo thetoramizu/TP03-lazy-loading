@@ -6,7 +6,7 @@ import { FooterComponent } from './footer/footer.component';
 import { LandingPageComponent } from './landing-page/landing-page.component';
 import {RouterModule} from "@angular/router";
 import {FilmModule} from "../film/film.module";
-import {FrameworksModule} from "../frameworks/frameworks.module";
+import {MaterialModule} from "../../../../assets/variables-globales/material/material.module";
 
 
 
@@ -20,12 +20,13 @@ import {FrameworksModule} from "../frameworks/frameworks.module";
   exports: [
     LandingPageComponent,
   ],
-  imports: [
-    CommonModule,
-    RouterModule,
-    // Import de nos modules
-    FilmModule,
-    // FrameworksModule,
-  ]
+    imports: [
+        CommonModule,
+        RouterModule,
+        // Import de nos modules
+        FilmModule,
+        // FrameworksModule,
+        MaterialModule,
+    ]
 })
 export class AccueilModule { }

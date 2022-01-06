@@ -1,21 +1,75 @@
 <p>home !</p>
-<p>{{title}}</p>
-<p>Commande : ng g m frameworks --routing </p>
+<h1>{{title}}</h1>
+<p>Material : ng add @angular/material </p>
+
+<!--<mat-icon [color]="'primary'">add</mat-icon>-->
+<!--<mat-icon [color]="'warn'">waterfall_chart</mat-icon>-->
+<!--<mat-icon [color]="'warn'">calendar_today</mat-icon>-->
+
+<!--<button mat-raised-button [color]="'primary'">TEST</button>-->
+
+
+<button mat-raised-button [color]="'primary'" (click)="doAnimation()">
+  <mat-icon [color]="'warn'">waterfall_chart</mat-icon>
+  Animations
+</button>
+
+
+<div style="height: 300px">
+  <div [@triggerOpenClose]="flag ? 'open' : 'closed'">
+
+  </div>
 
 
 
-<!--<?xml version="1.0" encoding="UTF-8" ?>-->
-<!--<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">-->
-<!--  <file source-language="en-US" target-language="fr-FR" datatype="plaintext" original="ng2.template">-->
-<!--    <body>-->
-<!--    <trans-unit id="5123473167465266846" datatype="html">-->
-<!--      <source> Hello angular </source>-->
-<!--      <target> Bonjour Angular </target>-->
-<!--      <context-group purpose="location">-->
-<!--        <context context-type="sourcefile">src/app/webApp/root/accueil/home/home.component.html</context>-->
-<!--        <context context-type="linenumber">6</context>-->
-<!--      </context-group>-->
-<!--    </trans-unit>-->
-<!--    </body>-->
-<!--  </file>-->
-<!--</xliff>-->
+<hr>
+
+
+<div class="boite">
+
+  <form>
+
+    <mat-icon>face</mat-icon>&nbsp;
+    <mat-form-field>
+      <mat-label>Votre prénom</mat-label>
+      <input type="text" matInput required>
+    </mat-form-field>
+
+    <p></p>
+
+    <mat-icon>settings</mat-icon>&nbsp;
+    <mat-form-field>
+      <mat-label>Votre message</mat-label>
+      <textarea matInput required></textarea>
+    </mat-form-field>
+
+    <p></p>
+
+    <mat-icon>calendar_today</mat-icon>&nbsp;
+    <mat-form-field appearance="fill">
+      <mat-label>Choisir une date</mat-label>
+      <input matInput [matDatepicker]="date">
+      <mat-datepicker-toggle matSuffix [for]="date"></mat-datepicker-toggle>
+      <mat-datepicker #date></mat-datepicker>
+    </mat-form-field>
+
+    <p></p>
+
+    <button mat-raised-button color="primary">Envoyer</button>
+
+
+  </form>
+
+
+</div>
+
+
+
+
+
+
+<div></div>
+
+
+
+

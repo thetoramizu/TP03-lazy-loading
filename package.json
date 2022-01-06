@@ -7,15 +7,19 @@
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
-    "build:prod:i18n": "ng build --watch --configuration development --localize"
+    "build:prod:i18n": "ng build --watch --configuration development --localize",
+    "build:stats": "ng build --watch --configuration development --stats-json",
+    "analyzer": "webpack-bundle-analyzer dist/stats.json"
   },
   "private": true,
   "dependencies": {
     "@angular/animations": "~13.1.0",
+    "@angular/cdk": "^13.1.1",
     "@angular/common": "~13.1.0",
     "@angular/compiler": "~13.1.0",
     "@angular/core": "~13.1.0",
     "@angular/forms": "~13.1.0",
+    "@angular/material": "^13.1.1",
     "@angular/platform-browser": "~13.1.0",
     "@angular/platform-browser-dynamic": "~13.1.0",
     "@angular/router": "~13.1.0",
@@ -39,6 +43,7 @@
     "karma-coverage": "~2.1.0",
     "karma-jasmine": "~4.0.0",
     "karma-jasmine-html-reporter": "~1.7.0",
-    "typescript": "~4.5.2"
+    "typescript": "~4.5.2",
+    "webpack-bundle-analyzer": "^4.5.0"
   }
 }
