@@ -25,7 +25,7 @@ import {FrameworksModule} from "../frameworks/frameworks.module";
     RouterModule,
     // Import de nos modules
     FilmModule,
-    FrameworksModule,
+    // FrameworksModule,
   ]
 })
 export class AccueilModule { }

@@ -9,7 +9,19 @@ const routes: Routes = [
   { path: '', component: HomeComponent},
   { path: 'home-page', component: HomeComponent},
   { path: 'liste-des-films', component: ListeDesFilmsComponent},
-  { path: 'liste-des-frameworks', component: FwLandingPageComponent, children: routesFw },
+
+  // 1ere méthode avec import des routes renommé et du module ( ! lazy loading)
+  // { path: 'liste-des-frameworks', component: FwLandingPageComponent, chialdren: routesFw },
+
+  //2eme méthode: Lazy Loading
+  // { path: 'liste-des-frameworks', component: FwLandingPageComponent,
+  //   loadChildren: () => import('./webApp/root/frameworks/frameworks.module').then((module) => module.FrameworksModule) },
+
+  //3ème méthode: LAZY LOADING avec async/await
+  { path: 'liste-des-frameworks', component: FwLandingPageComponent,
+    loadChildren: async () => (await  import('./webApp/root/frameworks/frameworks.module')).FrameworksModule },
+
+
 ];
 
 @NgModule({
