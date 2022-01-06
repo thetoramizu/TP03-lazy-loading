@@ -1,28 +1,6 @@
 <p>home !</p>
-<p>L'Internationalisation I18N</p>
-<p>Commande : ng add @angular/localize </p>
-
-<p>Marquer les éléments à internationnaliser </p>
-<p i18n class = "alert alert-primary"> Hello angular </p>
-
-<p i18n="@@titre" class="alert alert-success">New trad with key</p>
-<p>
-  <img i18n i18n-src i18n-title src="assets/images/drapeaux/en/drapeau_en.jpg" alt="" title="My Flag">
-</p>
-
-
-<p>Pendant la compil (serve / build) les éléments marqués vont être répertoriés dans un fichier .xlf(xml) ou en json</p>
-
-<p>Création de ce fichier de traduction : </p>
-<p>Commande: ng xi18n --output-path src/locale (deprecated) </p>
-<p>Commande: ng extract-i18n --output-path src/locale (--format="json") </p>
-
-
-<p>3.Conf angular.json</p>
-<p>4.  ng serve --configuration="fr"  -> ng build --localize</p>
-<p>5.  en mode build (prod = minifié + packé) ng build --localize</p>
-<p>5.  en mode build (non prod) ng build --watch --configuration development --localize</p>
-
+<p>{{title}}</p>
+<p>Commande : ng g m frameworks --routing </p>
 
 
 

@@ -26,6 +26,7 @@ import { VueComponent } from './composants-enfants/vue/vue.component';
     FrameworksRoutingModule
   ],
   exports: [
+    FwLandingPageComponent,
     FwHeaderComponent,
     FwHomeComponent,
     FwFooterComponent,
