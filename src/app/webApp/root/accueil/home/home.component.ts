@@ -24,7 +24,7 @@ import {animate, state, style, transition, trigger} from "@angular/animations";
 })
 export class HomeComponent implements OnInit {
 
-  title: string = 'Animations + Material Design';
+  title: string = 'Firebase';
   public flag: boolean = true;
   constructor() { }
 

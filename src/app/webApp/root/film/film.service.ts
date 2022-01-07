@@ -19,7 +19,7 @@ export class FilmService {
   // Méthode
   // TODO Ecriture alternative ? !!important
   public getFilms = () => {
-    const url = 'https://dev.webjs.fr/films.json';
+    const url = 'http://localhost:3001/films';
     return this._http.get<Film[]>(url).pipe(
       // pipe pour enchainer plusieurs opérateurs RXJS
       tap(

@@ -1,19 +1,27 @@
-
 <h1>Liste des Films</h1>
 <div class="row">
+
+  <div class="inCart">
+    <div *ngFor="let fic of listInCart">
+      <span>{{fic.title}}</span><span><mat-icon style="font-size: 20px" [color]="'warn'" (click)="deleteFilm(fic)">delete</mat-icon></span>
+    </div>
+  </div>
+
+  <button mat-raised-button [color]="'warn'" (click)="emptyBasket()">Vider le panier</button>
+  <button mat-raised-button [color]="'accent'" (click)="validateCart()">Valider le panier</button>
 
   <div class="col-md-4" *ngFor="let film of listFilms">
 
     <div class="card">
 
-      <img class="card-img-top" src="{{film.avatar}}" alt="">
-
+      <!--      <img class="card-img-top" src="{{film.avatar}}" alt="">-->
+      <button mat-raised-button [color]="'primary'" (click)="addToCart(film)">Ajouter au panier</button>
       <div class="card-body">
 
         <h5 class="card-title">{{film.title}}</h5>
 
-        <p class="card-text">Description : {{film.desc}}</p>
-        <p class="card-text">Année  : {{film.year}}</p>
+        <p class="card-text">Description : {{film.desc.slice(0,250)}}...</p>
+        <p class="card-text">Année : {{film.year}}</p>
         <p class="card-text"><a href="{{film.url}}" target="_blank">Lien : {{film.url}}</a></p>
 
       </div>
@@ -21,16 +29,20 @@
     </div>
 
 
+  </div>
+
+
+  <!--<div *ngFor="let t of listFilms">-->
+  <!--  {{t.title}}-->
 
   </div>
 
 
 
-
-
-
-<!--<div *ngFor="let t of listFilms">-->
-<!--  {{t.title}}-->
-
+<!-- Gestion du panier -->
+<!--<div class="row">-->
+<!--  <div class="col-md-12" *ngFor="let eltPanier of panierFilms">-->
+<!--    ☼ {{eltPanier.title}}-->
+<!--    <button class="btn btn-danger"> <i class="bi bi-archive-fill" (click)="supprPanierFilm(eltPanier)"></i></button>-->
+<!--  </div>-->
 <!--</div>-->
-
