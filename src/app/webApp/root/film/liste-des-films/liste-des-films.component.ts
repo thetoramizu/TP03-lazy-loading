@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {FilmService} from "../film.service";
 import {Film} from "../../../../../assets/class/film";
 import {CartService} from "../../../../../assets/services/cart.service";
@@ -13,40 +13,53 @@ export class ListeDesFilmsComponent implements OnInit {
   // properties
   public listFilms: Film[] = [];
   public listInCart: Film[] = [];
+  public listCommandes: any = [];
 
   constructor(
     private filmService: FilmService,
     private cartService: CartService,
-  ) { }
+  ) {
+  }
 
   ngOnInit(): void {
 
     this.filmService.getFilms().subscribe((films: Film[]) => {
       this.listFilms = films
     });
+    // datas de firestore
+    this.cartService.getCommandes().subscribe(commandes => {
+      this.listCommandes = commandes;
+    })
+
   }
 
 
-  emptyBasket(){
+  emptyBasket() {
     this.listInCart = [];
   }
 
-  addToCart(film: Film){
+  addToCart(film: Film) {
     // TODO si déjà existant ??
     this.listInCart.push(film);
   }
 
-  deleteFilm(film: Film){
+  deleteFilm(film: Film) {
     const index = this.listInCart.indexOf(film);
     this.listInCart.splice(index, 1);
   }
 
-  validateCart(){
+  validateCart() {
     // Jsonner les data
-    console.log(...this.listInCart);
     const datasJson = {...this.listInCart}
-    this.cartService.validateCart(datasJson);
+    this.cartService.validateCart(datasJson).then(response => {
+      console.log(response)
+    })
+    // Vide le panier
+    this.emptyBasket();
+  }
 
+  supprCommande(commande: any) {
+    this.cartService.deleteCommande(commande.payload.doc.id).then(r => console.log(r));
   }
 
 }

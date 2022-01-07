@@ -1,4 +1,17 @@
 <h1>Liste des Films</h1>
+
+<!-- Gestion des commandes -->
+<div class="row">
+  <h2><i class="bi bi-basket3"></i> Les Commandes</h2>
+  <div class="col-md-12" *ngFor="let commande of listCommandes">
+
+    <strong> Numéro de commande : {{commande.payload.doc.id}}</strong>
+
+    <button class="btn btn-danger"> <i class="bi bi-archive-fill" (click)="supprCommande(commande)"></i></button>
+
+  </div>
+
+
 <div class="row">
 
   <div class="inCart">
@@ -45,4 +58,4 @@
 <!--    ☼ {{eltPanier.title}}-->
 <!--    <button class="btn btn-danger"> <i class="bi bi-archive-fill" (click)="supprPanierFilm(eltPanier)"></i></button>-->
 <!--  </div>-->
-<!--</div>-->
+</div>

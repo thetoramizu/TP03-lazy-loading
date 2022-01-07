@@ -15,12 +15,39 @@ export class CartService {
 
   /**
    * Ajouter le panier à firestore
-   * @param datas liste films en json
+   * @param filmsJson liste films en json
    */
-  public validateCart(datas: any) {
+  public validateCart(filmsJson: any) {
+    // this._firestore.collection('cart').add(filmsJson).then(res => console.log(res));
 
-    this._firestore.collection('cart').add(datas).then(res => console.log(res));
-
+    return new Promise(
+      (resolve, reject) => {
+        this._firestore.collection('cart').add(filmsJson).then(res =>
+        {resolve(res)},
+            err => {reject(err)});
+      }
+    )
   }
+
+  /**
+   * Recupere les commandes depuis le firestore
+   */
+  public getCommandes() {
+    // snapchotChanges = temps reel
+    return this._firestore.collection('cart').snapshotChanges()
+  }
+
+  /**
+   * Supprime une commande du firestore
+   * @param idCommande document commande
+   */
+  public deleteCommande(idCommande: any) {
+    // return null
+    return this._firestore.collection('cart').doc(idCommande).delete();
+  }
+
+  // public supp = (document: any) => {
+  //   return this._firestore.collection('cart').doc()
+  // }
 
 }

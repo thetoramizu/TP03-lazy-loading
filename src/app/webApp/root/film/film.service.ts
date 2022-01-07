@@ -20,20 +20,21 @@ export class FilmService {
   // TODO Ecriture alternative ? !!important
   public getFilms = () => {
     const url = 'http://localhost:3001/films';
-    return this._http.get<Film[]>(url).pipe(
-      // pipe pour enchainer plusieurs opérateurs RXJS
-      tap(
-        (responseHTTP => console.warn ('Depuis le service : ', responseHTTP))
-      ),
-      map(
-        (res: Film[]) => {
-          return res.filter(
-          (data: Film) => {
-            return data.id > 0;
-          }
-          )
-        })
-    )
+    return this._http.get<Film[]>(url)
+    //   .pipe(
+    //   // pipe pour enchainer plusieurs opérateurs RXJS
+    //   tap(
+    //     (responseHTTP => console.warn('Depuis le service : ', responseHTTP))
+    //   ),
+    //   map(
+    //     (res: Film[]) => {
+    //       return res.filter(
+    //         (data: Film) => {
+    //           return data.id > 0;
+    //         }
+    //       )
+    //     })
+    // )
   }
 
 
