@@ -24,7 +24,7 @@ import {animate, state, style, transition, trigger} from "@angular/animations";
 })
 export class HomeComponent implements OnInit {
 
-  title: string = 'Firebase';
+  title: string = 'Formulaires reactives';
   public flag: boolean = true;
   constructor() { }
 

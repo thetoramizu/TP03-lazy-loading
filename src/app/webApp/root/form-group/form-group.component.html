@@ -1,0 +1,72 @@
+<form [formGroup]="monForm" (submit)="onSubmit()">
+
+  <mat-icon>face</mat-icon>&nbsp;
+  <mat-form-field>
+    <mat-label>Votre prénom :</mat-label>
+    <input type="text" matInput formControlName="prenom">
+  </mat-form-field>
+
+  <p></p>
+<!--  <p>☼ Prénom : {{monForm.controls['prenom'].value}}</p>-->
+<!--  <p>☼ Prénom (Touched) : {{monForm.controls['prenom'].touched}}</p>-->
+
+  <p></p>
+  <mat-icon>emoji_people</mat-icon>&nbsp;
+  <mat-form-field>
+    <mat-label>Votre nom :</mat-label>
+    <input type="text" matInput formControlName="nom">
+  </mat-form-field>
+
+  <p></p>
+  <!-- <p>☼ Nom : {{fnControls().nom.value}}</p>
+  <p>☼ Nom (Pristine) : {{fnControls().nom.pristine}}</p> -->
+
+  <p></p>
+  <mat-icon>email</mat-icon>&nbsp;
+  <mat-form-field>
+    <mat-label>Votre email :</mat-label>
+    <input type="text" matInput formControlName="email">
+  </mat-form-field>
+
+  <p></p>
+
+  <!--  -->
+  <div formGroupName="adresse" class="adresse">
+    <div>
+      <mat-icon>traffic</mat-icon>&nbsp;
+      <mat-form-field>
+        <mat-label>Saisir votre rue :</mat-label>
+        <input matInput type="text" formControlName="rue">
+      </mat-form-field>
+
+      <p></p>
+    </div>
+    <div>
+      <mat-icon>traffic</mat-icon>&nbsp;
+      <mat-form-field>
+        <mat-label>Saisir votre ville :</mat-label>
+        <input matInput type="text" formControlName="ville">
+      </mat-form-field>
+      <p></p>
+    </div>
+    <div>
+      <mat-icon>traffic</mat-icon>&nbsp;
+      <mat-form-field>
+        <mat-label>Saisir votre cp :</mat-label>
+        <input matInput type="text" formControlName="cp">
+      </mat-form-field>
+
+      <p></p>
+    </div>
+  </div>
+  <!--  -->
+
+  <p></p>
+
+  <button mat-raised-button color="primary" type="submit" [disabled]="!monForm.valid">
+    <mat-icon>login</mat-icon>&nbsp; submit ...
+  </button>
+
+  <p></p>
+
+</form>
